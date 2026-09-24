@@ -43,17 +43,22 @@ public class PropertyCell extends Cell {
 	 * Calculates and returns the current rent owed based on ownership and number of houses.
 	 * @return The rent amount due for landing on this property.
 	 */
-	public int getRent() {
-		int rentToCharge = rent;
-		String [] monopolies = theOwner.getMonopolies();
-		for(int i = 0; i < monopolies.length; i++) {
-			if(monopolies[i].equals(colorGroup)) {
-				rentToCharge = rent * 2;
-			}
-		}
+    public int getRent() {
+        int rentToCharge = rent;
+        String [] monopolies = theOwner.getMonopolies();
+        rentToCharge = calculateMonopoliesRent(rentToCharge, monopolies);
 		if(numHouses > 0) {
 			rentToCharge = rent * (numHouses + 1);
 		}
+		return rentToCharge;
+	}
+
+	private int calculateMonopoliesRent(int rentToCharge, String[] monopolies) {
+		for(int i = 0; i < monopolies.length; i++) {
+            if(monopolies[i].equals(colorGroup)) {
+                rentToCharge = rent * 2;
+            }
+        }
 		return rentToCharge;
 	}
 
