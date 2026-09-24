@@ -47,13 +47,13 @@ public class PropertyCell extends Cell {
 			}
 		}
 	}
-
 	private void fetchPlayer() {
-		Player currentPlayer;
+		
 	}
 
-	private void getCurrentPlayer() {
-		Player currentPlayer = null;
+
+	public void getCurrentPlayer() {
+		
 	}
 
 	public void setColorGroup(String colorGroup) {

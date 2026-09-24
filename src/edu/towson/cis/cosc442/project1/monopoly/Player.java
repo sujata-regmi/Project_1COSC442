@@ -32,19 +32,19 @@ public class Player {
             properties.add(cell);
             colorGroups.put(
                     cell.getColorGroup(), 
-                    new Integer(getPropertyNumberForColor(cell.getColorGroup())+1));
+                     Integer.valueOf(getPropertyNumberForColor(cell.getColorGroup())+1));
         }
         if(property instanceof RailRoadCell) {
             railroads.add(property);
             colorGroups.put(
                     RailRoadCell.COLOR_GROUP, 
-                    new Integer(getPropertyNumberForColor(RailRoadCell.COLOR_GROUP)+1));
+                    Integer.valueOf(getPropertyNumberForColor(RailRoadCell.COLOR_GROUP)+1));
         }
         if(property instanceof UtilityCell) {
             utilities.add(property);
             colorGroups.put(
                     UtilityCell.COLOR_GROUP, 
-                    new Integer(getPropertyNumberForColor(UtilityCell.COLOR_GROUP)+1));
+                    Integer.valueOf(getPropertyNumberForColor(UtilityCell.COLOR_GROUP)+1));
         }
         setMoney(getMoney() - amount);
     }
@@ -76,7 +76,7 @@ public class Player {
 				player.properties.add(cell);
 				colorGroups.put(
 						cell.getColorGroup(), 
-						new Integer(getPropertyNumberForColor(cell.getColorGroup())+1));
+						Integer.valueOf(getPropertyNumberForColor(cell.getColorGroup())+1));
 			}
 		}
 		properties.clear();
