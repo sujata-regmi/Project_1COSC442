@@ -53,6 +53,12 @@ public class PropertyCell extends Cell {
 		return rentToCharge;
 	}
 
+	/**
+	 * Calculates the rent with monopoly consideration based on the color group ownership.
+	 * @param rentToCharge Initial rent amount to be potentially adjusted.
+	 * @param monopolies Array of color groups where the owner has monopolies.
+	 * @return The calculated rent adjusted for monopoly ownership.
+	 */
 	private int calculateMonopoliesRent(int rentToCharge, String[] monopolies) {
 		for(int i = 0; i < monopolies.length; i++) {
             if(monopolies[i].equals(colorGroup)) {
